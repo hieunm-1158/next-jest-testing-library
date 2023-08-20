@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <div data-testid="count">count: {count}</div>
+      {/* <div data-testid="count">count: {count}</div>
       <button onClick={handleSetCount}>
         <span>Increase</span>
       </button>
@@ -44,7 +44,23 @@ export default function Home() {
       <div data-testid="total">result:{total}</div>
       <button onClick={handleAdd}>
         <span>Add 2 number</span>
-      </button>
+      </button> */}
+      //example 2
+      <div>
+        <h1>Title</h1>
+        <a className="active" href="https://www.example.com">
+          link
+        </a>
+        <input type="text" placeholder="Enter your email" />
+        <label htmlFor="username">Username:</label>
+        <input type="text" id="username" />
+        <button>Click me</button>
+        <img src="landscape.jpg" alt="A beautiful landscape" />
+        <div title="Important Note">Note: This is important!</div>
+        <input type="text" value="Initial value" />
+        <div>Hello, World!</div>
+        <div data-testid="special-element">Special Element</div>
+      </div>
     </>
   );
 }

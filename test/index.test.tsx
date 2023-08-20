@@ -51,3 +51,70 @@ it("should render count state true when mock useState", () => {
   const { getByTestId } = render(<Index />);
   expect(getByTestId("count")).toHaveTextContent("count: 2");
 });
+
+//example queryType
+describe("QueryType", () => {
+  test("it finds a button by its role", () => {
+    const { getByRole } = render(<Index />);
+
+    const buttonElement = getByRole("button", { name: "Click me" });
+    expect(buttonElement).toBeInTheDocument();
+  });
+
+  test("it finds an input by its label text", () => {
+    const { getByLabelText } = render(<Index />);
+
+    const inputElement = getByLabelText("Username:");
+    expect(inputElement).toBeInTheDocument();
+  });
+
+  test("it finds an input by its placeholder text", () => {
+    const { getByPlaceholderText } = render(<Index />);
+
+    const inputElement = getByPlaceholderText("Enter your email");
+    expect(inputElement).toBeInTheDocument();
+  });
+
+  test("it finds an element by its displayed text", () => {
+    const { getByText } = render(<Index />);
+
+    const element = getByText("Hello, World!");
+    expect(element).toBeInTheDocument();
+  });
+
+  test("it finds an input by its displayed value", () => {
+    const { getByDisplayValue } = render(<Index />);
+
+    const inputElement = getByDisplayValue("Initial value");
+    expect(inputElement).toBeInTheDocument();
+  });
+
+  test("it finds an image by its alt text", () => {
+    const { getByAltText } = render(<Index />);
+
+    const imageElement = getByAltText("A beautiful landscape");
+    expect(imageElement).toBeInTheDocument();
+  });
+
+  test("it finds an element by its title", () => {
+    const { getByTitle } = render(<Index />);
+
+    const element = getByTitle("Important Note");
+    expect(element).toBeInTheDocument();
+  });
+
+  test("it finds an element by its data-testid attribute", () => {
+    const { getByTestId } = render(<Index />);
+
+    const element = getByTestId("special-element");
+    expect(element).toBeInTheDocument();
+  });
+
+  //jsdom matcher
+  test("it checks if an element has a specific attribute", () => {
+    const { getByRole } = render(<Index />);
+    const linkElement = getByRole("link");
+    expect(linkElement).toHaveAttribute("href", "https://www.example.com");
+    expect(linkElement).toHaveClass("active");
+  });
+});
